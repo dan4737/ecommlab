@@ -20,7 +20,7 @@
 
         <div class="menu" style="text-align: center; margin-left: 43%; ">
             <a href="./Login/login.php" >Log in</a>
-            <a href="./Login/register.html" style="margin-left: 5rem;">Sign up</a>
+            <a href="./Login/register.php" style="margin-left: 5rem;">Sign up</a>
         </div>
 
     </div>
