@@ -19,6 +19,7 @@ if(isset($_POST['login'])){
       $_SESSION['custmer_name'] = $result['customer_name'];
       $_SESSION['customer_email'] = $result['customer_email'];
       header('Location:../view/index.php');
+      
     }
     else{
       session_start();
