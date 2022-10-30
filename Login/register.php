@@ -23,46 +23,49 @@
           <div class="login-wrapper my-auto">
             <h1 class="login-title">Log in</h1>
 
-            <form method="post" action="../Actions/registerprocess.php" id="form" >
+            <form method="post" action="./registerprocess.php" id="form" >
 
                 <div class="error" id="error">
                 </div>
 
                 <div class="form-group">
                     <label for="name">Fullname</label>
-                    <input type="text" name="customer_name" id="name" class="form-control" placeholder="James Maddison">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="James Maddison">
                     <div id='name_error' class="val_error"></div>
 
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="customer_email" id="email" class="form-control" placeholder="email@example.com">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com">
                     <div id='email_error' class="val_error"></div>
 
                 </div>
                 <div class="form-group mb-4">
                     <label for="password">Password</label>
-                    <input type="password" name="customer_pass" id="password"  class="form-control" placeholder="enter your passsword">
+                    <input type="password" name="password" id="password"  class="form-control" placeholder="enter your passsword">
                     <div id='password_error' class="val_error"></div>
                 </div>
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <input type="text" name="customer_country" id="country" class="form-control" placeholder="Ghana">
+                    <input type="text" name="country" id="country" class="form-control" placeholder="Ghana">
                     <div id='country_error' class="val_error"></div>
                 </div>
                 <div class="form-group">
                     <label for="city">City</label>
-                    <input type="city" name="customer_city" id="city" class="form-control" placeholder="Accra">
+                    <input type="city" name="city" id="city" class="form-control" placeholder="Accra">
                     <div id='city_error' class="val_error"></div>
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact</label>
-                    <input type="number" name="customer_contact" id="contact"  class="form-control" placeholder="0592234913">
+                    <input type="number" name="contact" id="contact"  class="form-control" placeholder="0592234913">
                     <div id='contact_error' class="val_error"></div>
 
                 </div>
-                
-                <button name="register" id="login" class="btn btn-block login-btn" type="submit" value="Login" onclick='return sub()'>Sign up</button>
+                <div class="form-group">
+                    <label for="user-role">User role</label>
+                    <input type="tel" name="user-role" id="contact" class="form-control" placeholder="0592234913" value="2" readonly="readonly">
+                </div>
+                <button name="addButton" id="login" class="btn btn-block login-btn" type="submit" value="Login" onclick='return sub()'>Sign up</button>
             </form>
          
 
@@ -75,6 +78,7 @@
           <img src="../Images/login.jpg" alt="login image" class="login-img">
         </div>
 
+       
       </div>
     </div>
   </main>

@@ -34,27 +34,29 @@
               </div>
               <p class="login-card-description">Sign into your account</p>
 
-              <form method="post" action="../Actions/loginprocess.php" id="form">
+              <form method="post" action="./loginprocess.php" id="form">
 
                   <div class="form-group">
-                  
+                  <?php if (isset($_GET['error'])) { ?>
+     					        <p class="error"><?php echo $_GET['error']; ?></p>
+     				      <?php } ?>
                     
-                    <label for="email"name="customer_email" class="sr-only">Email</label>
-                    
+                    <label for="email" class="sr-only">Email</label>
+                    <!-- <input type="text" name="email" id="email" class="form-control" placeholder="Email address" > -->
 
-                    <input type="text" name="customer_email" id="email" placeholder="Email">
+                    <input type="text" name="email" id="email" placeholder="Email">
                     <div id='email_error' class="val_error"></div>
 
                   </div>
                   <div class="form-group mb-4">
-                    <label for="password" name="customer_pass" class="sr-only">Password</label>
-                    <input type="password" name="customer_pass" id="password" placeholder="********">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" name="password" id="password" placeholder="********">
                     <div id='password_error' class="val_error"></div>
                   </div>
 
                   <!-- pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/" -->
 
-                  <button name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login">Login</button>
+                  <button name="addButton" id="login" class="btn btn-block login-btn" type="submit" value="Login">Login</button>
 
               </form>
 
@@ -70,32 +72,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="card login-card">
-        <img src="assets/images/login.jpg" alt="login" class="login-card-img">
-        <div class="card-body">
-          <h2 class="login-card-title">Login</h2>
-          <p class="login-card-description">Sign in to your account to continue.</p>
-          <form action="#!">
-            <div class="form-group">
-              <label for="email" class="sr-only">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="password" class="sr-only">Password</label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-prompt-wrapper">
-              <div class="custom-control custom-checkbox login-card-check-box">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember me</label>
-              </div>              
-              <a href="#!" class="text-reset">Forgot password?</a>
-            </div>
-            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">
-          </form>
-          <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
-        </div>
-      </div> -->
     </div>
 
 

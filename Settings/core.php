@@ -6,25 +6,25 @@ ob_start();
 session_start(); 
 
 //get the name of the current page
-// $current_file = $_SERVER['SCRIPT_NAME']; 
+$current_file = $_SERVER['SCRIPT_NAME']; 
 
 //funtion to check for login
-// function check_login(){
-// 	//check if login session exit
-// 	if (!isset($_SESSION['user_id'])) 
-// 	{
-// 		//redirect to login page
-//     	header('Location: ../Login/login.php');
-// 	}
-// }
+function check_login(){
+	//check if login session exit
+	if (!isset($_SESSION['user_id'])) 
+	{
+		//redirect to login page
+    	header('Location: ../login/login.php');
+	}
+}
 
 //function to check for permission 
-// function check_permission(){
-// 	//get session role
-// 	if (isset($_SESSION['user_role'])) {
-// 		//assign session to an array
-// 		return $_SESSION['user_role'];
-// 	}
-// }
+function check_permission(){
+	//get session role
+	if (isset($_SESSION['user_role'])) {
+		//assign session to an array
+		return $_SESSION['user_role'];
+	}
+}
 
 ?>
