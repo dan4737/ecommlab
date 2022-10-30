@@ -15,9 +15,6 @@ require('../Settings/core.php');
 
     $res = password_verify($password,$results['customer_pass']);
 
-    // echo $results['customer_pass'];
-    // echo $res;
-    // return;
     
     if($res == true){
 
@@ -30,54 +27,8 @@ require('../Settings/core.php');
         header("Location: ../Login/login.php?error=Incorrect username or password"); 
     }
 
-    // if($results['customer_email'] === $email || $results['customer_pass'] === $password ){
-       
-    //     $_SESSION['user_role'] = $results['user_role'];
-    //     $_SESSION['customer_id'] = $results['customer_id'];
-
-    //     header("Location: ../Error/success.html");
-    // }else{
-        
-    //     header("Location: ../Login/login.php?error=Incorrect username or password"); 
-    // }
+   
 
 
 }
 
-
-
-if(isset($_GET['deleteProductID'])){
-
-    $id = $_GET['deleteProductID'];
-
-    // call the function
-    $result = delete_product_controller($id);
-
-    if($result === true) header("Location: ../views/products.php");
-    else echo "deletion failed";
-
-
-}
-
-
-if(isset($_POST["updateProductID"])){
-
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $description = $_POST['desc'];
-    $qty = $_POST['qty'];
-
-
-    // Call the function
-    $results = update_product_controller($id, $name, $description, $qty);
-    if($results === true) header("Location: ../views/products.php");
-    else echo "deletion failed";
-}
-
-
-// updating
-
-
-
-
-?>
