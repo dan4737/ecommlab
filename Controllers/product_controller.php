@@ -93,4 +93,58 @@ function update_category_controller($id, $name){
 
 }
 
+// PRODUCT
+
+
+function list_brands_controller(){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->list_brands();
+}
+
+
+function list_category_controller(){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->list_categories();
+}
+
+
+
+function add_product_controller($category,$brand,$title,$price,$description,$fileDestination,$keyword){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->add_product($category,$brand,$title,$price,$description,$fileDestination,$keyword);
+}
+
+function list_products_controller(){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->list_products();
+}
+
+function select_one_product_controller($id){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->select_one_product($id);
+}
+
+function update_product_controller($category,$brand,$title,$price,$description,$keyword, $id){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->update_product($category,$brand,$title,$price,$description,$keyword, $id);
+}
+
+function list_selected_products_controller($query){
+    $product_instance = new Product();
+    // call the method from the class
+    return $product_instance->list_selected_products($query);
+}
+
+function check_product_exists($title){
+
+    $product_instance = new Product();
+    return $product_instance->check_product($title);
+}
+
 ?>

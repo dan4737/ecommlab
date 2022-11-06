@@ -56,4 +56,48 @@ class Product extends Connection{
 		// return true or false
 		return $this->query("update categories set cat_name='$name' where cat_id = '$id'");
 	}
+
+	// PRODUCTS
+	function list_brands(){
+		// return array or false
+		return $this->fetch("select * from brands");
+	}
+
+	function list_categories(){
+		// return array or false
+		return $this->fetch("select * from categories");
+	}
+
+	function add_product($category,$brand,$title,$price,$description,$fileDestination,$keyword){
+
+		return $this->query("insert into products(product_cat,product_brand, product_title, product_price, product_desc,product_image, product_keywords) values('$category', '$brand', '$title', '$price', '$description','$fileDestination', '$keyword')");
+	}
+
+	function list_products(){
+		// return array or false
+		return $this->fetch("select * from products");
+	}
+
+	function select_one_product($id){
+		return $this->fetchOne("select * from products where product_id='$id'");
+	}
+
+	function update_product($category,$brand,$title,$price,$description,$keyword, $id){
+
+		return $this->query("update products set product_cat = '$category',product_brand = '$brand', product_title = '$title', product_price = '$price', product_desc = '$description', product_keywords = '$keyword' where product_id = '$id' ");
+
+		// update products set product_cat = '3',product_brand = '6', product_title = 'Air Jordans 2', product_price = '120', product_desc = 'new description', product_keywords = 'keyword' where product_id = '4' 
+
+	}
+
+	function list_selected_products($query){
+
+		return $this->fetch("select * from products where (`product_title` like '".$query."%') ");
+
+	}
+
+	function check_product($title){
+		return $this->fetchOne("select * from products where product_title='$title'");
+	}
 }
+?>
