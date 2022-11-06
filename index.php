@@ -45,7 +45,7 @@ require('./Settings/core.php');
             <a class='nav-link active' href='./View/all_product.php'>All Products</a>
             <!-- <a class='nav-link active' href='./View/cart.php'>Cart</a> -->
             <a class='nav-link active' href='./Login/login.php'>Login</a>
-            <a class='nav-link active' href='./Login/register.html'>Sign up</a>
+            <a class='nav-link active' href='./Login/register.php'>Sign up</a>
 
             <?php
             if(isset($_SESSION['user_role']) ){
