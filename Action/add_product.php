@@ -11,6 +11,7 @@ require('../Controllers/product_controller.php');
     $price = $_POST['price'];
     $description = $_POST['description'];
     $keyword = $_POST['keyword'];
+    
 
     // uploading process
 

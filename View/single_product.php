@@ -79,6 +79,25 @@ echo "
             <p>{$products['product_keywords']}</p>
         </div>
           
+        <form method='post' action='../Action/add_to_cart.php'>
+            <input name='id' style='display:none' type='text' class='form-control' id='exampleInputEmail1'  value={$products['product_id']}>
+
+            // <div class='review__add'>
+                <button type='submit' name='addtocart' href='./cart.php?id={$products['product_id']}' class='review__btn'>
+                    ADD TO Cart
+                </button>
+                </div>
+    
+        
+        </form>
+
+
+
+        
+        <div class='review__del-box' style='margin-top:40px'>
+            <i class='fas fa-truck fa-2x'> </i>
+            <p>Delivery at a fee</p>
+        </div>
     </div>
 </div>
 

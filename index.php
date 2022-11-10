@@ -31,19 +31,19 @@ require('./Settings/core.php');
 
         <form method="post" action="./Action/searchprocess.php">
 
-            <!-- <div class="input-group">
+            <div class="input-group">
                 <div class="form-outline">
-                    <input name="searchInput" pe="search"  id="form1" class="form-control" /> -->
-                    <!-- <label class="form-label" for="form1">Search</label> -->
-                <!-- </div>
+                    <input name="searchInput" pe="search"  id="form1" class="form-control" /> 
+                    <label class="form-label" for="form1">Search</label>
+                    </div>
                 <button type="submit" name="searchbutton" class="btn btn-primary"><i class="fas fa-search"></i></button>
-            </div> -->
+            </div>
 
         </form>
         
         
             <a class='nav-link active' href='./View/all_product.php'>All Products</a>
-            <!-- <a class='nav-link active' href='./View/cart.php'>Cart</a> -->
+            <a class='nav-link active' href='./View/cart.php'>Cart</a>
             <a class='nav-link active' href='./Login/login.php'>Login</a>
             <a class='nav-link active' href='./Login/register.php'>Sign up</a>
 

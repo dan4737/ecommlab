@@ -2,6 +2,9 @@
 
 require('../Classes/product_class.php');
 
+
+// BRAND
+
 function add_brand_controller($name){
 
     // echo $email;
@@ -93,6 +96,7 @@ function update_category_controller($id, $name){
 
 }
 
+
 // PRODUCT
 
 
@@ -148,3 +152,5 @@ function check_product_exists($title){
 }
 
 ?>
+
+

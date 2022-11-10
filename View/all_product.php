@@ -66,7 +66,14 @@ $product = list_products_controller();
                         <img src='{$x['product_image']}' alt='Book 01' class='product__image' style='width:50%; margin-left: 25%'>
                     </div>
                     <div class='product__info'>
-                      
+                        <div class='product__detail'>
+                            <h3 class='product__title'>{$x['product_title']}</h3>
+                            <a href='#'>
+                            <div class='product__icon product__like'>
+                                <i class='fas fa-heart fa-2x'></i>
+                                </div>
+                            </a>
+                        </div>
                         
                         <h1 class='product__price'>GHC {$x['product_price']}</h1>
                         <div class='product__second'>
@@ -82,7 +89,7 @@ $product = list_products_controller();
                             </div>
                         </a>
 
-              
+                       
                         
                     </div>
                 </div>
@@ -99,16 +106,18 @@ $product = list_products_controller();
 
     <!-- Footer Section -->
     <section class="footer">
-        <h2 class="products__section-title">H.inc</h2>
+        <h2 class="products__section-title">Hallel.inc</h2>
         <ul class="nav">
-            <li class="nav__item"><a href="#" class="nav__link">Home</a></li><br>
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Wishlist</a></li>
             <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Contact Us</a></li>
         </ul>
 
-        
+        <p class="copyright">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo voluptatibus assumenda harum voluptatum non dolorum voluptates maiores voluptate dignissimos totam?
+        </p>
     </section>
 
     
