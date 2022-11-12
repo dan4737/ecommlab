@@ -33,13 +33,14 @@ require('./Settings/core.php');
 
             <div class="input-group">
                 <div class="form-outline">
-                    <input name="searchInput" pe="search"  id="form1" class="form-control" /> 
-                    <label class="form-label" for="form1">Search</label>
-                    </div>
+                    <input name="searchInput" pe="search"  id="form1" class="form-control" />
+                    <!-- <label class="form-label" for="form1">Search</label> -->
+                </div>
                 <button type="submit" name="searchbutton" class="btn btn-primary"><i class="fas fa-search"></i></button>
             </div>
 
         </form>
+        
         
         
             <a class='nav-link active' href='./View/all_product.php'>All Products</a>
@@ -72,3 +73,10 @@ require('./Settings/core.php');
         </div>
         </div>
     </nav>
+
+    <?php if (isset($_GET['error'])) { ?>
+            <h4 class="error" style="text-align:center; color:red"><?php echo $_GET['error']; ?></h4>
+    <?php } ?>
+
+</body>
+</html>    

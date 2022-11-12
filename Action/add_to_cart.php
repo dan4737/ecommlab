@@ -10,14 +10,14 @@ require('../Settings/core.php');
 
     if(isset($_POST['addtocart'])){
 
-        if(isset($_SESSION['user_role'])){
-   
         $id = $_POST['id'];
         $ip_address = getenv("REMOTE_ADDR");
-        $customerid = $_SESSION['user_id'];
         $qty = 1;
         
-    
+
+        if(isset($_SESSION['user_role'])){
+        $customerid = $_SESSION['user_id'];
+   
         $check = select_single_cart_item_controller($id);
     
     
@@ -37,39 +37,50 @@ require('../Settings/core.php');
         }
 
     }else{
-        header("Location: ../Login/login.php");
-    }
+        $check = select_single_cart_item_controller($id);
+
+        if($check['p_id'] != $id){
+        $results = add_to_cart_no_cid($id,$ip_address,$qty);
+
+
+        if($results === true){
+            header("Location: ../View/all_product.php?error=Product Added Successfully");
+        }else{
+
+            header("Location: ../Error/error.html");
+
+            }
+        }else{
+            header("Location: ../View/all_product.php?error=Item already in Added to cart");
+        }
+    }   
 }
 
  
 
     
+if(isset($_POST['managecart'])){
+
+    $id = $_POST['id'];
+    $ip_address = getenv("REMOTE_ADDR");
+    $customerid = $_SESSION['user_id'];
+    $qty = $_POST["quantity"];
 
 
+    $result = update_cart_category($id, $ip_address, $qty);
 
-    
-
-    // call the add_product_controller function: return true or false
-    
-   
     // var_dump($result);
     // return;
-    // $check = select_single_brand_controller($name);
 
-    // if($check["brand_name"] != $name){
-    //     $result = add_brand_controller($name);
+    if($result === true){
+        header("Location: ../View/cart.php?error=Quantity updated Successfully");
+    }else{
 
-    //     if($result === true) header("Location: ../Admin/Brand.php");
-    //     else header("Location: ../Error/error.html");
-    // }else{
-    //     header("Location: ../Action/Add_brand.php?error=Brand Already Exists in System"); 
-    //     return;
-    // }
-    
+        header("Location: ../Error/error.html");
 
-    // if($result === true) header("Location: ../Admin/Brand.php");
-    // else header("Location: ../Error/error.html");
+    }
 
+}
 
 
 ?>

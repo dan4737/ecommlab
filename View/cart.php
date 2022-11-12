@@ -2,7 +2,17 @@
 require('../Controllers/cart_controller.php');
 require('../Settings/core.php');
 
-$product = list_all_cart_controller($_SESSION['user_id']);
+$id = isset($_SESSION['user_id']);
+
+    $product = list_all_cart_controller($id, getenv("REMOTE_ADDR"));
+    $total = check_total($id, getenv("REMOTE_ADDR"));
+
+    foreach($total as $total)
+
+    $_SESSION["total"] = $total["total"];
+
+
+
 
 ?>
 
@@ -51,8 +61,14 @@ $product = list_all_cart_controller($_SESSION['user_id']);
 		</div>
 	</nav>
 
+    <?php if (isset($_GET['error'])) { ?>
+            <h4 class="error" style="text-align:center; color:red"><?php echo $_GET['error']; ?></h4>
+    <?php } ?>
+
  <!-- Product Card sectionnnnn -->
  <h2 class="products__section-title">Products</h2>
+ <h2 class="products__section-title">Cart total: GHC <?php echo $total["total"] ?> </h2>
+ <a href="./payment.php" class="btn btn-primary" style="font-size: 25px; margin-left:42%">Proceed to checkout</a>
  <div class='products'>
     <?php
         foreach($product as $x){
@@ -81,14 +97,14 @@ $product = list_all_cart_controller($_SESSION['user_id']);
                     </div>
 
                     <div style='display:flex; width:100%;'>
-                        <a href='#' style='width:100%;'>
+                        <a href='../Action/manage_quantity_cart.php?id={$x['product_id']}' style='width:100%;'>
                             <div class='product__icon-2 product__arrow' style='width:150%; margin-left:2px; margin-top:20px'>
                             <h4>Manage Quantity</h4>
                             </div>
                         </a>
 
                        
-                        <a href='#' style='width:100%;'>
+                        <a href='../Action/remove_from_cart.php?id={$x['product_id']}' style='width:100%;'>
                             <div class='product__icon-2 product__arrow' style='width:150%; margin-left:2px; margin-top:20px'>
                                 <h4>Remove from Cart</h4>
                             </div>
